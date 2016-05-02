@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "person website",
   "dependencies": {
-    "startbootstrap-sb-admin-2": "^1.0.8"
+    "startbootstrap-sb-admin-2": "^1.0.8",
+    "react": "^15.0.2"
   }
 }
