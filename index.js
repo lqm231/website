@@ -1,22 +1,27 @@
-var express = require('express');
-var app = express();
-var path = require("path");
+'use strict';
 
-app.set("port", (process.env.PORT || 5000));
+// Modules
+//var debug = require('debug')('raneto');
 
-app.use(express.static(__dirname + "/app"));
-app.use("/lib", express.static(__dirname + "/lib"));
+// Here is where we load Raneto.
+// When you are in your own project repository,
+// Raneto should be installed via NPM and loaded as:
+ var raneto = require('raneto');
+//
+// For development purposes, we load it this way in this example:
+// var raneto = require('../app/index.js');
 
-// views is directory for all template files
-// app.set("views", __dirname + "/views");
-// app.set("view engine", "ejs");
+// Then, we load our configuration file
+// This can be done inline, with a JSON file,
+// or with a Node.js module as we do below.
+var config = require('./config/config.default.js');
 
-app.get('/', function(req, res) {
-    // response.send("HELLO");
-    // response.render("index");
-    res.sendFile(path.join(__dirname + "/index.html"));
-});
+// Finally, we initialize Raneto
+// with our configuration object
+var app = raneto(config);
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+// Load the HTTP Server
+var server = app.listen(app.get('port'), function () {
+    console.log("Express HTTP server listening on port " + server.address().port);
+  //debug('Express HTTP server listening on port ' + server.address().port);
 });
