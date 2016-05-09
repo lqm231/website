@@ -4,8 +4,9 @@ var path = require("path");
 
 app.set("port", (process.env.PORT || 3000));
 
-app.use(express.static(__dirname + "/app"));
+app.use(express.static(__dirname + "/public"));
 app.use("/lib", express.static(__dirname + "/lib"));
+app.use("/favicon.ico", express.static(__dirname + "/favicon.ico"));
 
 // views is directory for all template files
 // app.set("views", __dirname + "/views");

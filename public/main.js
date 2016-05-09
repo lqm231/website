@@ -5,17 +5,28 @@
         "plugins" : "lib/Durandal/js/plugins",
         "transitions" : "lib/Durandal/js/transitions",
         "knockout": "lib/knockout.js/knockout",
-        "bootstrap": "lib/bootstrap/js/bootstrap",
+        "bootstrap": "lib/bootstrap/dist/js/bootstrap.min",
         "jquery": "lib/jquery/dist/jquery.min",
-        "underscore" : "lib/underscore/underscore-min"
+        "underscore" : "lib/underscore/underscore-min",
+        "metisMenu": "lib/metisMenu/dist/metisMenu.min",
+        "raphael": "lib/raphael/raphael.min",
+        "morris": "lib/morrisjs/morris.min.js"
     },
     shim: {
         "bootstrap": {
             deps: ["jquery"],
             exports: "jQuery"
-       },
+        },
        "underscore" : {
             "exports" : "_"
+        },
+        "metisMenu": {
+            deps: ["jquery", "bootstrap"],
+            exports: "jQuery"
+        },
+        "morris": {
+            deps: [ "jquery", "raphael" ],
+            exports: "jQuery"
         }
     }
 });
@@ -36,7 +47,7 @@ define(["durandal/system",
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = "Durandal Starter Kit";
+    app.title = "LQMinh";
 
     app.configurePlugins({
         router:true,
@@ -52,6 +63,6 @@ define(["durandal/system",
             buildNavigationModel().
             activate();
 
-        app.setRoot("viewmodels/shell", "entrance");
+        app.setRoot("viewmodels/container", "entrance");
     });
 });
