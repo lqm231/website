@@ -2,10 +2,9 @@ module.exports = function(grunt) {
     "use strict";
     grunt.initConfig({
 	    src: {
-			app: "app",
 			lib: "lib",
-			less: "app/less",
-			css: "content/css"
+			less: "less",
+			css: "public/css"
 		},
 		usebanner: {
 		    dist: {
@@ -37,6 +36,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-less");
 
-	grunt.registerTask("addbanner", [ "usebanner" ]);
+	// grunt.registerTask("addbanner", [ "usebanner" ]);
 	grunt.registerTask("css", [ "less" ]);
 };
