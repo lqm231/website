@@ -18,6 +18,11 @@ app.get('/systemjs.config.js', function(req, res) {
     res.sendFile(path.join(__dirname + "/systemjs.config.js"));
 });
 
+app.get('/api/blog/detail/:htmlfile', function(req, res) {
+    var htmlFile = req.params.htmlfile;
+    res.sendFile(path.join(__dirname, "blogs", htmlFile));
+});
+
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + "/index.html"));
 });

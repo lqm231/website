@@ -18,7 +18,7 @@ import { About } from "../about/about";
 
 @Routes([
     {
-        path: "detail",
+        path: "detail/:htmlFile",
         component: BlogDetail
     },
     {
