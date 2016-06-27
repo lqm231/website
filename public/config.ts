@@ -1,3 +1,3 @@
 export const Config = {
-    apiURI: 'http://localhost:3000/api'
+    apiURI: 'https://lqminh.herokuapp.com/api'
 }
