@@ -12,7 +12,6 @@ export class BlogDetail implements OnActivate {
     blogDetail: any
     constructor(private blogService: BlogService, private router: Router) {}
     routerOnActivate(current: RouteSegment) {
-        console.log("Blog-detail2");
         let id = current.getParam("htmlFile");
         this.blogService.getBlog(id).
             then((blogDetail) => {

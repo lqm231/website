@@ -19,8 +19,8 @@ app.get('/systemjs.config.js', function(req, res) {
 });
 
 app.get('/api/blog/detail/:htmlfile', function(req, res) {
-    var htmlFile = req.params.htmlfile;
-    res.sendFile(path.join(__dirname, "blogs", htmlFile));
+    var htmlFile = req.params.htmlfile.replace(/-/g, "/");
+    res.sendFile(path.join(__dirname, "blogs", htmlFile + ".html"));
 });
 
 app.get('/*', function(req, res) {

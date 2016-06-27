@@ -19,7 +19,6 @@ export class BlogService {
     }
 
     private extractData(res: Response) {
-        console.log(res);
         // let body = res.json();
         let body = res.text();
         return body || "";
