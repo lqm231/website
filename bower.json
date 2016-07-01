@@ -5,7 +5,8 @@
   "dependencies": {
     "jquery": "^2.2.3",
     "startbootstrap-sb-admin-2": "^1.0.8",
-    "Durandal": "durandal#^2.1.0"
+    "Durandal": "durandal#^2.1.0",
+    "zoom.js": "^0.0.1"
   },
   "resolutions": {
     "jquery": "^2.2.3"
