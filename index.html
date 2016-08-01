@@ -24,6 +24,8 @@
         <link rel="stylesheet" href="css/starterkit.css" />
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Google recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <!-- Zoom.js -->
         <link href="lib/zoom.js/css/zoom.css" rel="stylesheet">
         <script src="lib/zoom.js/js/zoom.js"></script>
@@ -61,6 +63,11 @@
         </script>
     </head>
     <body>
+        <form action="?" method="POST">
+          <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <br/>
+          <input type="submit" value="Submit">
+        </form>
         <mn-app id="mn-app">
             <h1 class="text-center">
                 <i class="fa fa-spinner fa-pulse fa-fw"></i>
